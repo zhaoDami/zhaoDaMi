@@ -115,7 +115,10 @@ export default {
               this.$refs.yzmDiv.click()
               return this.$message.error("验证码输入错误");
           }
-          alert("登录成功")
+          this.$store.commit("login",this.ruleForm)
+
+          this.$router.push('/admin/index')
+          this.$message.success('登录成功')
         } else {
           this.$message.error("亲,输入的内容不能有空哦！")
           return false;

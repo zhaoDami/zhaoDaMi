@@ -13,10 +13,20 @@ const vuexLocal = new VuexPersistence({
 
 export default new Vuex.Store({
   state: {
-
+    loginData : [],
   },
   mutations: {
-
+    // 登录
+    login(state,ruleForm){
+      state.loginData.forEach(item => {
+        console.log(item.username == ruleForm.username)
+        if(item.username == ruleForm.username){
+         return;
+        }
+      })
+      console.log("执行")
+      state.loginData.push(ruleForm)
+    }
   },
   actions: {
 

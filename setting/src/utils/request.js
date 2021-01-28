@@ -9,7 +9,7 @@ const  Server = axios.create({
 
 //3. 定义请求拦截器
 Server.interceptors.request.use(function(config){
-    console.log(config);
+    // console.log(config);
     return config;
 }, function(error){
     return Promise.reject(error);
@@ -18,7 +18,7 @@ Server.interceptors.request.use(function(config){
 
 //4. 定义相应拦截器
 Server.interceptors.response.use(function(response){
-    console.log(response);
+    // console.log(response);
     //过滤出data的数据
     if(response.status == 200){
         return response.data;

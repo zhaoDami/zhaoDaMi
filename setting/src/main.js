@@ -9,9 +9,9 @@ import  axios  from "@/utils/request"
 Vue.prototype.$axios = axios;
 
 
-
-import * as echarts from "axios"
+import * as echarts from "echarts"
 Vue.prototype.$echats = echarts;
+
 
 
 import ElementUI from 'element-ui';
