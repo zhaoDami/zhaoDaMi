@@ -26,24 +26,24 @@
           </template>
           <el-menu-item-group>
             <el-menu-item index="/admin/basicTable">基本表格</el-menu-item>
-            <el-menu-item index="1-2">排序表格</el-menu-item>
-            <el-menu-item index="1-2">筛选表格</el-menu-item>
+            <el-menu-item index="/admin/sortTable">排序表格</el-menu-item>
+            <el-menu-item index="/admin/filterTable">筛选表格</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
         <!-- 图标管理 -->
-        <el-submenu index="1">
+        <el-submenu index="2">
           <template slot="title">
             <i class="el-icon-s-data"></i>
             <span>图标管理</span>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="1-1">柱状图</el-menu-item>
-            <el-menu-item index="1-2">折线图</el-menu-item>
-            <el-menu-item index="1-2">饼图</el-menu-item>
+            <el-menu-item index="/admin/bar">柱状图</el-menu-item>
+            <el-menu-item index="/admin/line">折线图</el-menu-item>
+            <el-menu-item index="/admin/pie">饼图</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
         <!-- 表单管理 -->
-        <el-submenu index="1">
+        <el-submenu index="3">
           <template slot="title">
             <i class="el-icon-s-order"></i>
             <span>表单管理</span>
