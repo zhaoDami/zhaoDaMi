@@ -14,6 +14,7 @@ const vuexLocal = new VuexPersistence({
 export default new Vuex.Store({
   state: {
     loginData : [],
+    loading : false,
   },
   mutations: {
     // 登录

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="topChart">
-      <div>
+      <div  v-loading="$store.state.loading">
         <p class="title">网站访客来源分析</p>
         <div id="topChart" style="width: 1000px; height: 500px"></div>
       </div>
@@ -276,6 +276,9 @@ export default {
   },
   mounted() {
     this.Chart();
+    this.$axios.get("/json/tabList.json").then(res => {
+      console.log(res)
+    })
   },
   methods: {
     Chart() {

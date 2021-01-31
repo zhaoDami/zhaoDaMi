@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <div class="topChart">
+  <div >
+    <div class="topChart" v-loading="$store.state.loading">
       <p class="title">某周网站访客来源分析</p>
       <div id="main" style="width: 1200px; height: 500px"></div>
     </div>
-    <div class="centerChart">
+    <div class="centerChart"  v-loading="$store.state.loading">
       <div>
         <p class="title">某周网站访客来源趋势图</p>
         <div
@@ -22,7 +22,7 @@
         ></div>
       </div>
     </div>
-    <div class="bottomChart">
+    <div class="bottomChart"  v-loading="$store.state.loading">
       <p class="title">世界人口总量(数据来自网络)</p>
       <div id="bottomChart" style="width: 1200px; height: 500px"></div>
     </div>

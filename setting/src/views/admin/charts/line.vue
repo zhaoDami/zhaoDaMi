@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="topChart">
+    <div class="topChart"  v-loading="$store.state.loading">
       <div>
         <p class="title">某周网站访客来源趋势图</p>
         <div id="leftChart" style="width: 600px; height: 500px"></div>
@@ -258,6 +258,9 @@ export default {
   },
   mounted() {
     this.tLeftChart();
+    this.$axios.get("/json/tabList.json").then(res => {
+      console.log(res)
+    })
   },
   methods: {
     tLeftChart() {
