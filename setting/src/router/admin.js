@@ -47,6 +47,12 @@ export default[
                 name:'pie',
                 component:()=>import('@/views/admin/charts/pie.vue')
             },
+            //表单管理
+            {
+                path:'/admin/render',
+                name:'render',
+                component:()=>import('@/views/admin/form/render')
+            }
         ]
     }
 ]
