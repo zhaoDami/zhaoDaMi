@@ -73,7 +73,7 @@
           <span slot="title">操作日志</span>
         </el-menu-item>
         <!-- 测试 -->
-        <el-menu-item index="4">
+        <el-menu-item index="/admin/test">
           <i class="el-icon-setting"></i>
           <span slot="title">测试</span>
         </el-menu-item>

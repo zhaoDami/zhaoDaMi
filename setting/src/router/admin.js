@@ -52,6 +52,13 @@ export default[
                 path:'/admin/render',
                 name:'render',
                 component:()=>import('@/views/admin/form/render')
+            },
+            // 测试路由
+            //表单管理
+            {
+                path:'/admin/test',
+                name:'test',
+                component:()=>import('@/views/admin/test/test')
             }
         ]
     }

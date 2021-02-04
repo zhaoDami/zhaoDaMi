@@ -36,8 +36,66 @@
     </p>
     <br />
     <p v-for="(item, index) in tableData" :key="index">
-      {{ item.title }} <br /><br />
-      
+      <el-table :data="item.sub_fields" style="width: 100%">
+        <el-table-column label="" width="180" prop="title"> </el-table-column>
+        <el-table-column
+          v-for="(items, index) in item.values"
+          :key="index"
+          :label="items"
+          width="180"
+        >
+          <input type="radio" :name="items" id="" />
+        </el-table-column>
+      </el-table>
+    </p>
+    <br />
+    <p>
+      您习惯在食物和水中放糖吗 <br /><br />
+      <el-radio-group v-model="formData.radio">
+        <el-radio label="食物和水中放糖-是">否</el-radio>
+        <el-radio label="食物和水中放糖-否">是</el-radio>
+      </el-radio-group>
+    </p>
+    <br />
+    <p>
+      导丝的使用情况 <br /><br />
+      <el-table :data="daosiData" style="width: 100%">
+        <el-table-column prop="date" label="编号" width="180">
+          <template slot-scope="scope">
+            <el-input
+              v-model="scope.row.bianhao"
+              placeholder="请输入内容"
+            ></el-input>
+          </template>
+        </el-table-column>
+        <el-table-column prop="name" label="名称" width="180">
+          <template slot-scope="scope">
+            <el-input
+              v-model="scope.row.mingcheng"
+              placeholder="请输入内容"
+            ></el-input>
+          </template>
+        </el-table-column>
+        <el-table-column prop="address" label="直径 （单位：inch）">
+          <template slot-scope="scope">
+            <el-input
+              v-model="scope.row.inch"
+              placeholder="请输入内容"
+            ></el-input>
+          </template>
+        </el-table-column>
+        <el-table-column prop="address" label="操作">
+          <template slot-scope="scope">
+            <el-button
+              type="primary"
+              v-if="!scope.row.flag"
+              @click="add(scope.row)"
+              >添加</el-button
+            >
+            <el-button type="danger" v-else @click="del(scope.row)">删除</el-button>
+          </template>
+        </el-table-column>
+      </el-table>
     </p>
   </div>
 </template>
@@ -47,11 +105,20 @@ export default {
   name: "",
   data() {
     return {
+      daosiData: [
+        {
+          bianhao: "",
+          mingcheng: "",
+          inch: "",
+          flag: false,
+        },
+      ],
       formData: {
         datetime: "",
         choseValue: "",
         nation: "",
         num: "",
+        radio: "",
       },
       sexData: [
         {
@@ -122,7 +189,23 @@ export default {
     };
   },
   mounted() {},
-  methods: {},
+  methods: {
+    add(item) {
+      item.flag = true;
+      this.daosiData.push({
+        bianhao: "",
+        mingcheng: "",
+        inch: "",
+        flag: false,
+      });
+    },
+    del(items){
+       let index = this.daosiData.findIndex(item => {
+         return item.bianhao == items.bianhao
+       })
+       this.daosiData.splice(index,1)
+    }
+  },
   computed: {},
   watch: {},
 };
