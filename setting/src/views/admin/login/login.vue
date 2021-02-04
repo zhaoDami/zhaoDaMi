@@ -168,7 +168,7 @@ export default {
     .div {
       width: 150px;
       letter-spacing: 15px;
-      background: url("http://bpic.588ku.com//back_origin_min_pic/20/12/16/4462ee88acf8b7fa3eff78a1b3914176.jpg!/fw/750/quality/99/unsharp/true/compress/true");
+      background: url("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201705%2F22%2F20170522134231_xHMZu.png&refer=http%3A%2F%2Fb-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1615039884&t=0639d38d75e6cb2e9882e37388f91c68");
       color: blue;
       line-height: 40px;
       padding: 0px 40px;
